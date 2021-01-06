@@ -1,0 +1,184 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-size:16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#ccc;
+    color:#333;
+}
+
+.wrapper {
+    max-width:1300px;
+    margin:40px auto;
+
+}
+
+.main {
+    background:#fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.branding,.menu {
+    flex:1;
+}
+
+.menu {    
+    color:#0005;
+    text-align: right;
+}
+.menu a {
+    color:#0005;
+    font-weight: bold;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.search-container input {
+    padding:5px;
+    width:100%;
+    margin: 1rem 0;
+}
+
+.col {
+    flex:0 0 calc(33.3% - 2rem);
+    border-right:1px dotted #aaa;
+    padding:1rem;
+}
+
+.col:last-child {border-right:none}
+
+.col-title-container {
+    padding:2rem;
+    margin-bottom:1rem;
+    text-align: center;
+
+}
+
+.col-title-container span.title {
+    font-size:24px;
+    font-weight: bold;
+}
+
+.add-more {
+    cursor:pointer;
+}
+
+.add-more:hover {
+    color:red;
+}
+
+.add-more:active {
+    color:maroon;
+}
+
+.notes {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+}
+
+.note {
+    flex: 0 0 48%;
+    min-height:100px;
+    margin-bottom:1rem;
+    font-size:11px;
+    box-shadow:2px 3px 0px 1px rgba(0,0,0, 0.1);
+    padding: 3px;
+    cursor:pointer;
+    animation: expand .3s linear;
+}
+@keyframes expand {
+    from {
+      transform: scale(0);
+      opacity: 0.1;
+    }
+  }
+
+.col:nth-child(1) .note { background:rgb(216, 233, 172);}
+.col:nth-child(2) .note { background:rgb(248, 199, 196);}
+.col:nth-child(3) .note { background:rgb(202, 207, 247);}
+
+.popup-bg {
+    background:rgba(0,0,0,0.3);
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    display:none;
+}
+
+.popup-bg .editor {
+    background: #fff;
+    box-shadow:9px 9px 0px 0px rgba(0,0,0,0.3);
+    border:1px solid #aaa;
+    width: 400px;
+    height: 300px;
+    padding:3rem;
+    margin:100px auto;
+}
+
+.editor textarea {
+    display: block;
+    width:100%;
+    min-height:200px;
+}
+
+.editor .buttons {
+    padding:2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor .buttons button {
+    display:block;
+}
+
+button {
+    border:0;
+    background:#333;
+    color:#eee;
+    padding: 7px 18px;
+    font-size:12px;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+button:active {
+    background: #06c;
+}
+
+.icon-btn {
+    background:transparent;
+    color:#333;
+    padding:0;
+}
+
+button.close-editor {
+    float: right;
+    position: relative;
+    top: -20px;
+    right: -20px;
+}
+
+.popup-error {
+    background: rgb(255 223 223);
+    color:#900;
+    padding: 0.5rem;
+    font-size:12px;
+    margin-bottom: 1rem;
+}
+
+:focus { outline: none;}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Idea Board</title>
+        <link href='files/css/style.css' rel='stylesheet' type='text/css' />
+        <link href='https://use.fontawesome.com/releases/v5.6.1/css/all.css' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src='files/js/app.js'></script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='header'>
+                <div class='branding'>
+                    <h1>IdeaBoardz</h1>
+                </div>
+                <div class='menu'>
+                    <a href='#'><i class='fas fa-download'></i> Export</a> | <a href='#'><i class='fas fa-lock'></i> Login</a>
+                </div>
+            </div>
+            <div class='search-container'>
+                <form>
+                    <input type='search' placeholder='Start typing to filter stickies'>
+                </form>
+            </div>
+            <div class='main'>
+                <div class='col'>
+                    <div class='col-title-container' >
+                        <span contenteditable="true" class='title'>Title 1</span> <span class='add-more'><button class='icon-btn'><i class='fas fa-plus-circle'></i></button></span>
+                    </div>
+                    <div class='notes'>
+                    </div>
+                </div>
+
+                <div class='col'>
+                    <div class='col-title-container'>
+                        <span contenteditable="true" class='title'>Title 2</span> <span class='add-more'><button class='icon-btn'><i class='fas fa-plus-circle'></i></button></span>
+                    </div>
+                    <div class='notes'>
+                        
+                    </div>
+                </div>
+
+                <div class='col'>
+                    <div class='col-title-container'>
+                        <span contenteditable="true" class='title'>Title 3</span> <span class='add-more'><button class='icon-btn'><i class='fas fa-plus-circle'></i></button></span>
+                    </div>
+                    <div class='notes'>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='popup-bg editor-popup'>
+            <div class='editor'>
+                <button class='icon-btn close-editor' title='Cancel'><i class='fas fa-times'></i></button>
+                <div class='meta'>
+                    <div class='popup-error'></div>
+                </div>
+                <div class='main'>
+                    <textarea></textarea>
+                </div>                
+                <div class='buttons'>
+                    <button class='icon-btn delete-note' title='Delete this note'><i class='fas fa-trash-alt'></i> Delete</button>
+                    <button class='save-note' title='Save this note'><i class='fas fa-save'></i> Save</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
