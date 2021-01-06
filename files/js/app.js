@@ -6,7 +6,7 @@ $(document).ready(function(){
         var i = $noteContainer.find('.note');
         var uniqueId = getUniqueNoteId();
         var initialText = '[' + title + '] ' + "Note "+(i.length+1);
-        $noteContainer.append('<div title="click to edit this note" class="note" data-noteid="'+uniqueId+'" >'+initialText+'</div>');
+        $noteContainer.append('<div title="click to edit this note" class="note" data-noteid="'+uniqueId+'" ><div class="noteContent">'+initialText+'</div><div class="noteLikes">0</div></div>');
     });
 
     $('.notes').on('click', '.note', function(){
@@ -38,15 +38,24 @@ getUniqueNoteId = function() {
 }
 openNoteEditor = function(noteId) {
     $('.editor').attr('data-editing-id',noteId);
-    $('.editor textarea').val($('.note[data-noteid='+noteId+']').text());
+    $('.editor textarea').val($('.note[data-noteid='+noteId+'] .noteContent').text());
+    $('.editor .likesCount').text($('.note[data-noteid='+noteId+'] .noteLikes').text());
     $('.editor-popup').show();
     $('.popup-error').html('').hide();
 };
 
 saveNote = function(noteId, content) {
-    $('.note[data-noteid='+noteId+']').text(content);
+    $('.note[data-noteid='+noteId+'] .noteContent').text(content);
+    
 }
 
 deleteNote = function(noteId) {
     $('.note[data-noteid='+noteId+']').remove();
 };
+
+increaseLikes = function() {
+    var likes = parseInt($('.likesCount').text().trim());
+    var noteId = $('.editor').attr('data-editing-id');
+    $('.likesCount').text(++likes);
+    $('.note[data-noteid='+noteId+'] .noteLikes').text(likes);
+}

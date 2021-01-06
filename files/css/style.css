@@ -90,6 +90,7 @@ body {
 }
 
 .note {
+    position: relative;
     flex: 0 0 48%;
     min-height:100px;
     margin-bottom:1rem;
@@ -182,3 +183,23 @@ button.close-editor {
 }
 
 :focus { outline: none;}
+
+.likes {
+    margin-top:2rem;
+}
+.likes i.fas {
+    cursor: pointer;
+}
+
+.noteLikes {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    width: 97%;
+    opacity: 0.8;
+}
+
+.noteLikes::before {
+    content: '+';
+    opacity: 0.6;
+}
